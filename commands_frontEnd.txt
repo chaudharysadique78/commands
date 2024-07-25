@@ -1,0 +1,13 @@
+sudo apt install node-typescript
+node -v
+npm -v
+ng v
+tsc -v
+
+
+Command to run tsc file test.ts is file name
+npx tsc test.ts
+node test.js
+
+Command to create Angular no standalone project
+ng new --no-standalone firstDemo
