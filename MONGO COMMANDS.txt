@@ -1,0 +1,56 @@
+MONGO COMMANDS
+
+To launch mongo
+mongosh
+
+To shpw db
+show dbs
+
+to create db
+use <db name>
+
+Delete database
+use <dbname>
+db.dropdatabase()
+
+To show all commections(Tables) in DB
+show collections
+
+Create empty collections
+db.createCollection("EMP")
+
+ADD Document(rows) in collection
+db.EMP.insert({"id":1,"name":"SADIK"})
+db.EMP.insertOne({"id":1,"name":"SADIK"})
+db.EMP.insertMany([{"id":3,"name":"SADIK"},{"id":4,"name":"SADAN"},{"id":5,"name":"SAHID"}])  // syntax db.insetMany([{},{},{},...])
+
+To show documnets(rows)
+db.EMP.find()
+db.EMP.find().pretty()
+db.EMP.find({"salary":{$gt:400}}) // give salaray greater than 4000
+db.EMP.find({"salary":{$lt:400}}) // give salaray less than 4000
+db.EMP.find({"salary":{$eq:400}}) // give salaray equal to 4000
+db.EMP.find({$or:[{"name":"SADIK"},{"id":4}]}) //give name sadik or id 4
+db.EMP.find({$and:[{"name":"SADIK"},{"id":4}]}) //give name sadik and id 4
+
+
+
+Delete Documents
+db.EMP.deleteOne({creteria object})
+db.EMP.deleteOne({"name":"SADIK"}) // will delete record with name SADIK. Delete only one records
+db.EMP.deleteOne({"name":"SADIK","id":2}) // delete record with mutiple fields criteria
+db.EMP.deleteMany({"name":"SADIK"}) //will delete record with name SADIK. Delete only many records
+
+
+Count no.of records (Documnet) in collection
+db.EMP.count()
+
+Update Documnet
+db.EMP.updateOne({"id":8},{$set:{"name":"SADAN"}})
+
+IN operator
+db.EMP.find({"name":{$in:["SADIK","SADAN]}})
+
+
+
+

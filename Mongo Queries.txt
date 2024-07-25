@@ -1,0 +1,40 @@
+displaying all dbs -
+show dbs
+creating new db -
+use <db-name>
+use ctsdb
+delete particular db (ctsdb) -
+use ctsdb
+db.dropDatabase()
+show all the collection in particular database -
+show collections
+Create empty collection -
+db.createCollection("EMP")
+Adding a document in EMP collection -
+db.EMP.insert({"id":1,"name":"anil","salary":20000})
+Show all document in EMP collection -
+db.EMP.find()
+Adding multiple documents in EMP collection -
+db.EMP.insertMany([{"Id":2,"name":"sujith","salary":3000},{"Id":4,"name":"sachin","age"32}])
+Show the current EMP documents -
+db.EMP.find().pretty()
+Delete a document where name=Anil -
+db.EMP.deleteOne({"name":"Anil"})
+Count no of Documents in EMP Collection -
+db.EMP.count()
+Delete based on AND operation -
+db.EMP.deleteOne({"name":"Ravi","salary":40000})
+Delete many doc by name in EMP collection -
+db.EMP.deleteMany({"name":"Ravi"})
+Fething documents based on gt/lt/eq operators in EMP collection -
+db.EMP.find({"salary":{$gt:40000}})
+fetch documents using or -
+db.EMP.find({$or:[{"name":"sachin"},{"salary":430000}]})
+Example of EQ operator in EMP Coll -
+db.EMP.find({"name":{$eq:"sachin"}})
+Example AND operation -
+db.EMP.find({$and:[{"name":"sachin"},{"age":25}]})
+Upadte EMP Collection -
+db.EMP.updateOne({"Id":8},{$set:{"name":"Sachin tendulkar"}})
+Example of $in -
+db.EMP.find({"name":{"$in":["sachin","Ravi"]}})

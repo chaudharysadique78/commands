@@ -1,0 +1,33 @@
+Maven project structure for: hello-world
+
+	
+	hello-world
+		pom.xml				-> config file
+		src				-> source directory
+		--------main
+			-----java		-> main source code
+		--------test		
+			-----java		-> unit testing code
+		target				-> compile output
+
+
+	maven
+	- build/project management tool
+	
+	maven lifecycle
+		compile		-> compiles the project and stores the output into target folder	
+		clean 		-> cleans the copiled output of the project
+		test		-> runs the unit test cases
+		install		-> install the deps to mavel local repo
+		package		-> generate the packaged output .jar/.war/.ear
+		site		-> documentation web page
+		verify		-> verify the config
+		
+		mvn clean 
+		mvn clean install
+		mvn clean compile
+		mvn clean compile package
+
+	maven repos
+		local		-> ~/.m2/repository 
+		central/remote	->  https://repo.maven.apache.org/maven2

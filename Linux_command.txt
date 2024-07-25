@@ -1,0 +1,35 @@
+d rwx rwx rwx
+		
+		d -> directory/folder
+		- -> file
+		
+		r -> read
+		w -> write/delete
+		x -> execute
+		
+		user
+		group
+		world
+		
+		r -> 4
+		w -> 2
+		x -> 1
+		
+		7
+		chmod 777 rwx rwx rwx
+		chmod 755 rwx r-x r-x
+		chown
+		unzip
+		zip
+		tar
+		grep
+		
+		cd
+		pwd
+		ls
+		head
+		tail
+		cat
+		
+		# Install gedit into a ubuntu/debian system
+		sudo apt install gedit -y

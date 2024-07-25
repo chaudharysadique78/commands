@@ -1,0 +1,87 @@
+To check the images
+docker images
+
+To pull the images
+docker pull mongo
+
+To delete images
+docker rmi <imageid>
+
+To create mongo container from the image
+docker run -d -p 27017:27017 --name mongocontainer mongo:latest
+
+To check the running containers
+docker ps
+
+To check the stopped containers
+docker ps -a
+
+To stop containers
+docker stop <containerid>
+
+To start containers
+docker start <containerid>
+
+To delete containers
+docker rm <containerid>
+
+
+To create network
+docker network create <networkname>
+
+To list the networks available
+docker network ls
+
+
+To create the image of sprigboot application
+First create dockerfile inside the springboot application and specify the configuration details
+
+Then cd into the project folder where this docker file exists
+
+Now run the following command
+docker build -t <imagename:tag> .
+
+To create the container of springboot application with network support
+
+docker run -d -p 8082:8082 --name blogservicecontainer --network=springmongonetwork blogserviceimage:v1
+
+
+To create the container of mongo with network support
+docker run -d -p 27017:27017 --name mongocontainer  --network=springmongonetwork mongo:latest
+
+To work with mongo container inside the docker
+docker exec -it 59ce310150ab bash
+
+Now type mongosh inside bash prompt
+
+show dbs
+
+use Blogdb
+
+To check the data use following commands
+
+db.blog.find().pretty();
+
+
+To check the logs
+
+docker logs <containerid> 
+
+
+
+Pushing the docker image to docker hub
+docker tag blogserviceimage:v1 annus26/blogserviceimage:latest
+
+docker push annus26/blogserviceimage:latest
+
+
+docker-compose up
+
+
+
+
+
+
+
+
+

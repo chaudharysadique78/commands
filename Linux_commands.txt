@@ -1,0 +1,4 @@
+pwd - to check current directory
+vi file name - edit file
+esc :wqi - out from file
+chmod 600 file name
